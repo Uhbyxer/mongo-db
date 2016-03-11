@@ -373,7 +373,41 @@ var blogjson =
    db.posts.update({}, {$set: {new: true}}, {multi : true});
    
    db.posts.remove({_id: -10});
-//  db.posts.drop();
-   
-   
+//  db.posts.drop();
    
+   
+   var weather =
+[
+  {
+    "year":2014,
+    "month":1,
+    "day":1,
+    "hour":0,
+    "temperature":-1,
+    "wind_direction":"Южный",
+    "wind":"3",
+    "code":"CL",
+    "clouds":9,
+    "visibility":10,
+    "humidity":94,
+    "pressure":1030
+  },
+  {
+    "year":2014,
+    "month":1,
+    "day":1,
+    "hour":3,
+    "temperature":-0.6,
+    "wind_direction":"Ю-З",
+    "wind":"2",
+    "code":"CL",
+    "clouds":9,
+    "visibility":10,
+    "humidity":86,
+    "pressure":1029
+  }
+ ];
+ 
+  for(var i=0; i<weather.length; i++) {
+	db.weather.insert( weather[i]);
+ } 
